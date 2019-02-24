@@ -1,0 +1,33 @@
+﻿Información
+
+Usted instalará Unik Qml Engine es su equipo. 
+
+Usted instalará unik en su equipo. Esta aplicación sirve para cargar aplicaciones desarrolladas en Qml.
+
+A continuación se le informará bajo que tipo de Licencia y modalidad usted podrá hacer uso de unik.
+
+unik aún está en fase de desarrollo Beta.
+
+Para más información dirigirse a http://unikode.org/
+Emaíl: nextsigner@gmail.com
+Whatsapps: +54 11 3802 4370
+
+Términos y condiciones de uso.
+
+Aplicación distribuida en el marco de la Licencia LGPL.
+
+Lea atentamente sobre este tipo de licencias en https://www.gnu.org/licenses/lgpl-3.0.html
+
+Esta aplicación no cumple ni provée ningún tipo de garantía. Toda la responsabilidad sobre los actos o hechos producidos al momento o tiempo después de utilizar esta aplicación llamada unik, el distribuidor de la mencionada aplicación no asume responsabilidad alguna sobre los mismos.
+
+Esta aplicación llamada unik fue desarrollada a los fines de proveer bajo la licencia LGPL una herramienta para ser utilizada en el desarrollo y/o distribuición de software. Esta aplicación no fue creada con fines específicos o predeterminados y puede ser utilizado para varios fines sin que esto vincule al creador de unik con fines desconocidos al momento de crear la aplicación o por fines u objetivos de segundas o terceras personas que hagan un uso o abuso de unik. 
+
+El creador de unik manifiesta en esta licencia que no es responsable ni del uso o finalidad para la que sea utilizada unik o sus aplicaciones anidadas. 
+
+Usted al instalar esta aplicación y al aceptar estos términos de uso, se asume como la única persona o entidad plenamente responsable sobre las circunstancias y/o consecuencias que el uso de este software llamado unik provoque en el ordenador en donde se instala unik o en otros ordenadores vinculados directa o indirectamente.
+
+Usted al aceptar estos términos confirma que ha leído atentamente los mismos y bajo su única responsabilidad hará uso o no de la aplicación llamada unik sin responsabilizar a nadie más que usted mismo.
+
+Todo lo que aquí se detalla fue escrito por el creador de unik el día 17 de Noviembre de 2017 y tiene plena vigencia hasta nuevo aviso por parte del mismo.
+
+Más información en nextsigner@gmail.com

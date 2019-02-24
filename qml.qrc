@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>fontawesome-webfont.ttf</file>
+        <file>Splash.qml</file>
+        <file>SplashAndroid.qml</file>
+        <file>mainAndroid.qml</file>
+        <file>Boton.qml</file>
+        <file>main_rpi.qml</file>
+        <file>probe.qml</file>
+        <file>appsListLauncher.qml</file>
+        <file>apd.qml</file>
+        <file>UnikRect.qml</file>
+        <file>resources/logo_unik_500x500.png</file>
+        <file>imports.qml</file>
+    </qresource>
+</RCC>

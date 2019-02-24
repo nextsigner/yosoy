@@ -1,0 +1,6 @@
+sudo apt-get install qtdeclarative5-*
+sudo apt-get install qml-module-qtquick*
+sudo apt-get install qtquick1-*
+sudo apt-get install qtquickcontrols5-*
+sudo apt-get install qml-module-qtquick2
+sudo apt-get install qt-labs-*
