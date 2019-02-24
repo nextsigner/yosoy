@@ -1,0 +1,3 @@
+[submodule "yosoy-luz"]
+	path = yosoy-luz
+	url = https://github.com/nextsigner/yosoy-luz.git

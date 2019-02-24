@@ -85,7 +85,7 @@ ApplicationWindow {
                     w:parent.width
                     h: w
                     t: '\uf013'
-                    d:'Editar cfg.json de unik y unik-tools'
+                    d:'Editar cfg.json de unik y yosoy'
                     b:app.area===1?app.c2:'#444'
                     c: app.area===1?'black':'#ccc'
                     visible: parseFloat(version)>2.12
@@ -93,23 +93,23 @@ ApplicationWindow {
                         app.area = 1
                     }
                 }
-                Boton{//Actualizar Unik-Tools
+                Boton{//Actualizar yosoy
                     id:btnUpdate
                     w:parent.width
                     h: w
                     t: '\uf021'
-                    d:'Actualizar el còdigo fuente de unik-tools desde GitHub.com'
+                    d:'Actualizar el còdigo fuente de yosoy desde GitHub.com'
                     b: up ? 'red':app.c1
                     c: up ? 'white':'#000'
                     property bool up: false
                     onClicking: {
                         if(Qt.platform.os!=='android'){
-                            unik.restartApp("-git=https://github.com/nextsigner/unik-tools.git")
+                            unik.restartApp("-git=https://github.com/nextsigner/yosoy.git")
                         }else{
-                            var gitDownloaded=unik.downloadGit('https://github.com/nextsigner/unik-tools', appsDir+'/unik-tools')
+                            var gitDownloaded=unik.downloadGit('https://github.com/nextsigner/yosoy', appsDir+'/yosoy')
                             if(gitDownloaded){
                                 var j=appsDir+'/temp_cfg.json'
-                                var c='{"arg0":"-folder='+appsDir+'/unik-tools'+'"}'
+                                var c='{"arg0":"-folder='+appsDir+'/yosoy'+'"}'
                                 unik.setFile(j, c)
                                 unik.restartApp()
                             }
@@ -236,7 +236,7 @@ ApplicationWindow {
                     onClicked: {
                         var p = appsDir+'/cfg.json'
                         console.log("Config File Deleted: "+p)
-                        console.log("Unik have unik-tools a default app.")
+                        console.log("Unik have yosoy a default app.")
                         unik.deleteFile(p)
                         app.area=0
                     }

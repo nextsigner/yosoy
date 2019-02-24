@@ -232,7 +232,7 @@ ApplicationWindow {
                 tlaunch.enabled=false
                 tlaunch.stop()
                 appListLaucher.close()
-                engine.load(appsDir+'/unik-tools/main.qml')
+                engine.load(appsDir+'/yosoy/main.qml')
             }else{
                 xP.visible=true
             }

@@ -129,9 +129,9 @@ void UnikArgsProc::procCfgArgs()
             dc.append("-folder=");
             dc.append(ws);
 #ifndef Q_OS_ANDROID
-            dc.append("/unik-tools");
+            dc.append("/yosoy");
 #else
-            dc.append("/unik-android-apps");
+            dc.append("/yosoy");
 #endif
             dc.append("\"");
 

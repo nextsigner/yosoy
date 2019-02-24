@@ -178,8 +178,8 @@ int main(int argc, char *argv[])
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
-    app.setApplicationDisplayName("unik qml engine");
-    app.setApplicationName("unik");
+    app.setApplicationDisplayName("yosoy");
+    app.setApplicationName("yosoy");
     app.setOrganizationDomain("http://www.unikode.org/");
     app.setOrganizationName("unikode.org");
 
@@ -289,19 +289,19 @@ int main(int argc, char *argv[])
 
 #ifndef __arm__
     #ifdef UNIK_COMPILE_ANDROID_X86
-        QByteArray urlGit="https://github.com/nextsigner/unik-android-apps";
-        QByteArray moduloGit="unik-android-apps";
+        QByteArray urlGit="https://github.com/nextsigner/yosoy";
+        QByteArray moduloGit="yosoy";
     #else
-        QByteArray urlGit="https://github.com/nextsigner/unik-tools";
-        QByteArray moduloGit="unik-tools";
+        QByteArray urlGit="https://github.com/nextsigner/yosoy";
+        QByteArray moduloGit="yosoy";
     #endif
 #else
 #ifdef Q_OS_ANDROID
-    QByteArray urlGit="https://github.com/nextsigner/unik-android-apps";
-    QByteArray moduloGit="unik-android-apps";
+    QByteArray urlGit="https://github.com/nextsigner/yosoy";
+    QByteArray moduloGit="yosoy";
 #else
-    QByteArray urlGit="https://github.com/nextsigner/unik-tools-rpi";
-    QByteArray moduloGit="unik-tools-rpi";
+    QByteArray urlGit="https://github.com/nextsigner/yosoy-rpi";
+    QByteArray moduloGit="yosoy-rpi";
 #endif
 #endif
     QByteArray modoDeEjecucion="indefinido";
@@ -386,15 +386,15 @@ int main(int argc, char *argv[])
     pq.append(pws);
 #ifndef __arm__
     #ifdef UNIK_COMPILE_ANDROID_X86
-        pq.append("/unik-android-apps/");
+        pq.append("/yosoy/");
     #else
-        pq.append("/unik-tools/");
+        pq.append("/yosoy/");
     #endif
 #else
 #ifdef Q_OS_ANDROID
-    pq.append("/unik-android-apps/");
+    pq.append("/yosoy/");
 #else
-    pq.append("/unik-tools-rpi/");
+    pq.append("/yosoy-rpi/");
 #endif
 #endif
     QDir::setCurrent(pq);
@@ -678,34 +678,34 @@ int main(int argc, char *argv[])
 #ifdef Q_OS_ANDROID
     QByteArray mf;
     mf.append(unikFolder);
-    mf.append("/unik-android-apps/main.qml");
+    mf.append("/yosoy/main.qml");
     QFile m(mf);
     if(!m.exists()){
-        //bool autd=u.downloadGit("https://github.com/nextsigner/unik-android-apps", unikFolder.toUtf8());
+        //bool autd=u.downloadGit("https://github.com/nextsigner/yosoy", unikFolder.toUtf8());
     }
 #else
     if(!modeGit){
         QString cut;
 #ifndef __arm__
-        cut.append(u.getFile(pws+"/unik-tools/main.qml"));
-        QByteArray utf;//unik-tools folder
+        cut.append(u.getFile(pws+"/yosoy/main.qml"));
+        QByteArray utf;//yosoy folder
         utf.append(pws);
-        if(!cut.contains("objectName: \'unik-tools\'")){
-            qInfo()<<"unik-tools have any fail! repairing..."<<pws;
-            bool autd=u.downloadGit("https://github.com/nextsigner/unik-tools.git", pws);
+        if(!cut.contains("objectName: \'yosoy\'")){
+            qInfo()<<"yosoy have any fail! repairing..."<<pws;
+            bool autd=u.downloadGit("https://github.com/nextsigner/yosoy.git", pws);
 #else
-        cut.append(u.getFile(pws+"/unik-tools-rpi/main.qml"));
-        if(!cut.contains("objectName: \'unik-tools\'")){
-            qInfo("unik-tools have any fail! repairing..."+unikFolder.toUtf8());
-            bool autd=u.downloadGit("https://github.com/nextsigner/unik-tools-rpi.git", unikFolder.toUtf8());
+        cut.append(u.getFile(pws+"/yosoy-rpi/main.qml"));
+        if(!cut.contains("objectName: \'yosoy\'")){
+            qInfo("yosoy have any fail! repairing..."+unikFolder.toUtf8());
+            bool autd=u.downloadGit("https://github.com/nextsigner/yosoy-rpi.git", unikFolder.toUtf8());
 #endif
             if(autd){
-                qInfo()<<"unik-tools repared.";
+                qInfo()<<"yosoy repared.";
             }else{
-                qInfo()<<"unik-tools is not repared.";
+                qInfo()<<"yosoy is not repared.";
             }
         }else{
-            qInfo("unik-tools module is ready!");
+            qInfo("yosoy module is ready!");
         }
     }
 #endif
@@ -715,9 +715,9 @@ int main(int argc, char *argv[])
     QString mainModName;
     mainModName.append(unikFolder);
 #ifndef Q_OS_ANDROID
-    mainModName.append("/unik-tools");
+    mainModName.append("/yosoy");
 #else
-    mainModName.append("/unik-android-apps");
+    mainModName.append("/yosoy");
 #endif
 
 #ifdef __arm__
@@ -741,15 +741,15 @@ int main(int argc, char *argv[])
         bool unikToolDownloaded=false;
 #ifndef __arm__
     #ifndef Q_OS_ANDROID
-        unikToolDownloaded=u.downloadGit("https://github.com/nextsigner/unik-tools", unikFolder.toUtf8());
+        unikToolDownloaded=u.downloadGit("https://github.com/nextsigner/yosoy", unikFolder.toUtf8());
     #endif
 #else
 #ifdef Q_OS_ANDROID
         if(showLaunch||uap.showLaunch){
-            unikToolDownloaded=u.downloadGit("https://github.com/nextsigner/unik-android-apps", unikFolder.toUtf8());
+            unikToolDownloaded=u.downloadGit("https://github.com/nextsigner/yosoy", unikFolder.toUtf8());
         }
 #else
-        unikToolDownloaded=u.downloadGit("https://github.com/nextsigner/unik-tools-rpi", unikFolder.toUtf8());
+        unikToolDownloaded=u.downloadGit("https://github.com/nextsigner/yosoy-rpi", unikFolder.toUtf8());
 #endif
 #endif
 
@@ -757,9 +757,9 @@ int main(int argc, char *argv[])
         //Log the Main Module Download Status.
         lba="";
 #ifndef Q_OS_ANDROID
-        lba.append("Unik-Tools ");
+        lba.append("yosoy ");
 #else
-        lba.append("unik-android-apps ");
+        lba.append("yosoy ");
 #endif
         if(unikToolDownloaded){
             lba.append("downloaded.");
@@ -976,12 +976,12 @@ int main(int argc, char *argv[])
             engine.addImportPath(pq);
             engine.addPluginPath(pq);
 #ifndef __arm__
-            pq.append("/unik-tools/");
+            pq.append("/yosoy/");
 #else
 #ifdef Q_OS_ANDROID
-            pq.append("/unik-android-apps/");
+            pq.append("/yosoy/");
 #else
-            pq.append("/unik-tools-rpi/");
+            pq.append("/yosoy-rpi/");
 #endif
 #endif
         }*/
@@ -1363,7 +1363,7 @@ int main(int argc, char *argv[])
         engine.rootContext()->setContextProperty("splashvisible", u.splashvisible);
     }
 #ifdef Q_OS_WIN
-    //qmlImportPath.append("C:/Users/qt/Documents/unik/unik-tools");
+    //qmlImportPath.append("C:/Users/qt/Documents/unik/yosoy");
     qmlImportPath.append(pq);
     engine.addImportPath(qmlImportPath);
     engine.addPluginPath(qmlImportPath);
@@ -1492,17 +1492,17 @@ int main(int argc, char *argv[])
     QByteArray uklData;
     uklData.append("-folder=");
     uklData.append(pws);
-    uklData.append("/unik-tools");
+    uklData.append("/yosoy");
     QByteArray uklUrl;
     uklUrl.append(pws);
-    uklUrl.append("/link_unik-tools.ukl");
+    uklUrl.append("/link_yosoy.ukl");
     u.setFile(uklUrl, uklData);
 #else
     QByteArray uklData;
-    uklData.append("-git=https://github.com/nextsigner/unik-android-apps.git");
+    uklData.append("-git=https://github.com/nextsigner/yosoy.git");
     uklData.append(" -dir=");
     uklData.append(pws);
-    uklData.append("/unik-android-apps");
+    uklData.append("/yosoy");
     QByteArray uklUrl;
     uklUrl.append(pws);
     uklUrl.append("/link_android-apps.ukl");
@@ -1510,7 +1510,7 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef Q_OS_WIN
-    u.createLink(u.getPath(1)+"/unik.exe", "-git=https://github.com/nextsigner/unik-tools.git -folder="+pws+"/unik-tools -nl",  u.getPath(6)+"/Unik-Tools.lnk", "Ejecutar Unik con el Modulo Unik-Tools", "C:/");
+    u.createLink(u.getPath(1)+"/unik.exe", "-git=https://github.com/nextsigner/yosoy.git -folder="+pws+"/yosoy -nl",  u.getPath(6)+"/yosoy.lnk", "Ejecutar Unik con el Modulo yosoy", "C:/");
 #endif
     //u.createLink("unik", "/home/nextsigner/Escritorio/eee4.desktop",  "rrr777", "Pequeña 222vo", "/home/nextsigner/Imàgenes/ladaga.jpg");
 
@@ -1520,7 +1520,7 @@ int main(int argc, char *argv[])
     //u.initWebSocketServer("127.0.0.1", 12345, "chatserver");
 
     //Set Unik Start Setting
-    //u.setUnikStartSettings("-git=https://github.com/nextsigner/unik-android-apps.git, -nl");
+    //u.setUnikStartSettings("-git=https://github.com/nextsigner/yosoy.git, -nl");
 
 
 #ifdef UNIK_COMPILE_RPI

@@ -118,7 +118,7 @@ ApplicationWindow {
                     anchors.fill: parent
                     onClicked: {
                         var p=''+appsDir+'/cfg.json'
-                        var c = '{"arg0":"-folder='+appsDir+'/unik-tools'+'"}'
+                        var c = '{"arg0":"-folder='+appsDir+'/yosoy'+'"}'
                         unik.setFile(p, c)
                         unik.restartApp()
                     }
@@ -212,7 +212,7 @@ ApplicationWindow {
         }
 
 
-        /*Boton{//Launch unik-tools
+        /*Boton{//Launch yosoy
             id:btnLaunchUT
             w:app.fs
             h: w
