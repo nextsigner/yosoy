@@ -6,14 +6,14 @@ ApplicationWindow {
     id: appListLaucher
     objectName: 'awll'
     visibility:  "Maximized"
-    color: "transparent"
+    color: 'white'
     flags: Qt.Window | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint
     property int fs: width<height?(Qt.platform.os !=='android'?appListLaucher.width*0.02:appListLaucher.width*0.06):(Qt.platform.os !=='android'?appListLaucher.width*0.02:appListLaucher.width*0.03)
-    property color c1: "#1fbc05"
-    property color c2: "#4fec35"
+    property color c1: "blue"
+    property color c2: "#f2f2f2"
     property color c3: "white"
-    property color c4: "black"
-    property color c5: "#333333"
+    property color c4: "#333333"
+    property color c5: "#cccccc"
 
     property bool prima: false
     property int sec: 0

@@ -39,7 +39,7 @@ UnikArgsProc::UnikArgsProc(QObject *parent) : QObject(parent)
     }
     ws="";
     ws.append(dp);
-    ws.append("/unik");
+    ws.append("/yosoy");
     QDir dws(ws);
     if(!dws.exists()){
         dws.mkpath(".");
@@ -51,8 +51,8 @@ UnikArgsProc::UnikArgsProc(QObject *parent) : QObject(parent)
 #else
     dp = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
     if(settings.value("ws").toString().isEmpty()){
-        settings.setValue("ws", dp.toUtf8()+"/unik");
-        ws=dp.toUtf8()+"/unik";
+        settings.setValue("ws", dp.toUtf8()+"/yosoy");
+        ws=dp.toUtf8()+"/yosoy";
         qInfo()<<"UAP WorkSpace by default: "<<ws;
     }else{
         qInfo()<<"Current WorkSpace: "<<settings.value("ws").toString().toUtf8();
@@ -60,7 +60,7 @@ UnikArgsProc::UnikArgsProc(QObject *parent) : QObject(parent)
         if(!fi.isWritable()){
             QString ndulw;
             ndulw.append(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
-            ndulw.append("/unik");
+            ndulw.append("/yosoy");
             ws = ndulw;
             qInfo()<<"WorkSpace not writable!";
             qInfo("New WorkSpace seted: "+ndulw.toUtf8());
@@ -68,7 +68,7 @@ UnikArgsProc::UnikArgsProc(QObject *parent) : QObject(parent)
 #ifndef Q_OS_ANDROID
             ws = settings.value("ws").toString().toUtf8();
 #else
-            ws=dp.toUtf8()+"/unik";
+            ws=dp.toUtf8()+"/yosoy";
 #endif
         }
     }

@@ -94,7 +94,7 @@
 //                    property bool up: false
 //                    onClicking: {
 //                        if(Qt.platform.os!=='android'){
-//                            unik.restartApp("-git=https://github.com/nextsigner/yosoy.git")
+//                            unik.restartApp("-git=https://github.com/nextsigner/yosoy-luz.git")
 //                        }else{
 //                            var gitDownloaded=unik.downloadGit('https://github.com/nextsigner/yosoy', appsDir+'/yosoy')
 //                            if(gitDownloaded){
@@ -356,7 +356,7 @@ ApplicationWindow {
                     property bool up: false
                     onClicking: {
                         if(Qt.platform.os!=='android'){
-                            unik.restartApp("-git=https://github.com/nextsigner/yosoy.git")
+                            unik.restartApp("-git=https://github.com/nextsigner/yosoy-luz.git")
                         }else{
                             var gitDownloaded=unik.downloadGit('https://github.com/nextsigner/yosoy', appsDir+'/yosoy')
                             if(gitDownloaded){

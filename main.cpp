@@ -289,19 +289,19 @@ int main(int argc, char *argv[])
 
 #ifndef __arm__
     #ifdef UNIK_COMPILE_ANDROID_X86
-        QByteArray urlGit="https://github.com/nextsigner/yosoy";
-        QByteArray moduloGit="yosoy";
+        QByteArray urlGit="https://github.com/nextsigner/yosoy-luz";
+        QByteArray moduloGit="yosoy-luz";
     #else
-        QByteArray urlGit="https://github.com/nextsigner/yosoy";
-        QByteArray moduloGit="yosoy";
+        QByteArray urlGit="https://github.com/nextsigner/yosoy-luz";
+        QByteArray moduloGit="yosoy-luz";
     #endif
 #else
 #ifdef Q_OS_ANDROID
-    QByteArray urlGit="https://github.com/nextsigner/yosoy";
-    QByteArray moduloGit="yosoy";
+    QByteArray urlGit="https://github.com/nextsigner/yosoy-luz";
+    QByteArray moduloGit="yosoy-luz";
 #else
-    QByteArray urlGit="https://github.com/nextsigner/yosoy-rpi";
-    QByteArray moduloGit="yosoy-rpi";
+    QByteArray urlGit="https://github.com/nextsigner/yosoy-luz-rpi";
+    QByteArray moduloGit="yosoy-luz-rpi";
 #endif
 #endif
     QByteArray modoDeEjecucion="indefinido";
@@ -386,15 +386,15 @@ int main(int argc, char *argv[])
     pq.append(pws);
 #ifndef __arm__
     #ifdef UNIK_COMPILE_ANDROID_X86
-        pq.append("/yosoy/");
+        pq.append("/yosoy-luz/");
     #else
-        pq.append("/yosoy/");
+        pq.append("/yosoy-luz/");
     #endif
 #else
 #ifdef Q_OS_ANDROID
-    pq.append("/yosoy/");
+    pq.append("/yosoy-luz/");
 #else
-    pq.append("/yosoy-rpi/");
+    pq.append("/yosoy-luz-rpi/");
 #endif
 #endif
     QDir::setCurrent(pq);
@@ -670,7 +670,7 @@ int main(int argc, char *argv[])
 #else
     unikFolder.append(u.getPath(3));
 #endif
-    unikFolder.append("/unik");
+    unikFolder.append("/yosoy");
     QDir dirUnik(unikFolder);
     if(!dirUnik.exists()){
         dirUnik.mkpath(".");
@@ -678,34 +678,34 @@ int main(int argc, char *argv[])
 #ifdef Q_OS_ANDROID
     QByteArray mf;
     mf.append(unikFolder);
-    mf.append("/yosoy/main.qml");
+    mf.append("/yosoy-luz/main.qml");
     QFile m(mf);
     if(!m.exists()){
-        //bool autd=u.downloadGit("https://github.com/nextsigner/yosoy", unikFolder.toUtf8());
+        //bool autd=u.downloadGit("https://github.com/nextsigner/yosoy-luz", unikFolder.toUtf8());
     }
 #else
     if(!modeGit){
         QString cut;
 #ifndef __arm__
-        cut.append(u.getFile(pws+"/yosoy/main.qml"));
-        QByteArray utf;//yosoy folder
+        cut.append(u.getFile(pws+"/yosoy-luz/main.qml"));
+        QByteArray utf;//yosoy-luz folder
         utf.append(pws);
-        if(!cut.contains("objectName: \'yosoy\'")){
-            qInfo()<<"yosoy have any fail! repairing..."<<pws;
-            bool autd=u.downloadGit("https://github.com/nextsigner/yosoy.git", pws);
+        if(!cut.contains("objectName: \'yosoy-luz\'")){
+            qInfo()<<"yosoy-luz have any fail! repairing..."<<pws;
+            bool autd=u.downloadGit("https://github.com/nextsigner/yosoy-luz.git", pws);
 #else
-        cut.append(u.getFile(pws+"/yosoy-rpi/main.qml"));
-        if(!cut.contains("objectName: \'yosoy\'")){
-            qInfo("yosoy have any fail! repairing..."+unikFolder.toUtf8());
-            bool autd=u.downloadGit("https://github.com/nextsigner/yosoy-rpi.git", unikFolder.toUtf8());
+        cut.append(u.getFile(pws+"/yosoy-luz-rpi/main.qml"));
+        if(!cut.contains("objectName: \'yosoy-luz\'")){
+            qInfo("yosoy-luz have any fail! repairing..."+unikFolder.toUtf8());
+            bool autd=u.downloadGit("https://github.com/nextsigner/yosoy-luz-rpi.git", unikFolder.toUtf8());
 #endif
             if(autd){
-                qInfo()<<"yosoy repared.";
+                qInfo()<<"yosoy-luz repared.";
             }else{
-                qInfo()<<"yosoy is not repared.";
+                qInfo()<<"yosoy-luz is not repared.";
             }
         }else{
-            qInfo("yosoy module is ready!");
+            qInfo("yosoy-luz module is ready!");
         }
     }
 #endif
@@ -715,9 +715,9 @@ int main(int argc, char *argv[])
     QString mainModName;
     mainModName.append(unikFolder);
 #ifndef Q_OS_ANDROID
-    mainModName.append("/yosoy");
+    mainModName.append("/yosoy-luz");
 #else
-    mainModName.append("/yosoy");
+    mainModName.append("/yosoy-luz");
 #endif
 
 #ifdef __arm__
@@ -741,15 +741,15 @@ int main(int argc, char *argv[])
         bool unikToolDownloaded=false;
 #ifndef __arm__
     #ifndef Q_OS_ANDROID
-        unikToolDownloaded=u.downloadGit("https://github.com/nextsigner/yosoy", unikFolder.toUtf8());
+        unikToolDownloaded=u.downloadGit("https://github.com/nextsigner/yosoy-luz", unikFolder.toUtf8());
     #endif
 #else
 #ifdef Q_OS_ANDROID
         if(showLaunch||uap.showLaunch){
-            unikToolDownloaded=u.downloadGit("https://github.com/nextsigner/yosoy", unikFolder.toUtf8());
+            unikToolDownloaded=u.downloadGit("https://github.com/nextsigner/yosoy-luz", unikFolder.toUtf8());
         }
 #else
-        unikToolDownloaded=u.downloadGit("https://github.com/nextsigner/yosoy-rpi", unikFolder.toUtf8());
+        unikToolDownloaded=u.downloadGit("https://github.com/nextsigner/yosoy-luz-rpi", unikFolder.toUtf8());
 #endif
 #endif
 
@@ -757,9 +757,9 @@ int main(int argc, char *argv[])
         //Log the Main Module Download Status.
         lba="";
 #ifndef Q_OS_ANDROID
-        lba.append("yosoy ");
+        lba.append("yosoy-luz ");
 #else
-        lba.append("yosoy ");
+        lba.append("yosoy-luz ");
 #endif
         if(unikToolDownloaded){
             lba.append("downloaded.");
@@ -976,12 +976,12 @@ int main(int argc, char *argv[])
             engine.addImportPath(pq);
             engine.addPluginPath(pq);
 #ifndef __arm__
-            pq.append("/yosoy/");
+            pq.append("/yosoy-luz/");
 #else
 #ifdef Q_OS_ANDROID
-            pq.append("/yosoy/");
+            pq.append("/yosoy-luz/");
 #else
-            pq.append("/yosoy-rpi/");
+            pq.append("/yosoy-luz-rpi/");
 #endif
 #endif
         }*/
@@ -1363,7 +1363,7 @@ int main(int argc, char *argv[])
         engine.rootContext()->setContextProperty("splashvisible", u.splashvisible);
     }
 #ifdef Q_OS_WIN
-    //qmlImportPath.append("C:/Users/qt/Documents/unik/yosoy");
+    //qmlImportPath.append("C:/Users/qt/Documents/unik/yosoy-luz");
     qmlImportPath.append(pq);
     engine.addImportPath(qmlImportPath);
     engine.addPluginPath(qmlImportPath);
@@ -1492,25 +1492,25 @@ int main(int argc, char *argv[])
     QByteArray uklData;
     uklData.append("-folder=");
     uklData.append(pws);
-    uklData.append("/yosoy");
+    uklData.append("/yosoy-luz");
     QByteArray uklUrl;
     uklUrl.append(pws);
-    uklUrl.append("/link_yosoy.ukl");
+    uklUrl.append("/link_yosoy-luz.ukl");
     u.setFile(uklUrl, uklData);
 #else
     QByteArray uklData;
-    uklData.append("-git=https://github.com/nextsigner/yosoy.git");
+    uklData.append("-git=https://github.com/nextsigner/yosoy-luz.git");
     uklData.append(" -dir=");
     uklData.append(pws);
-    uklData.append("/yosoy");
+    uklData.append("/yosoy-luz");
     QByteArray uklUrl;
     uklUrl.append(pws);
-    uklUrl.append("/link_android-apps.ukl");
+    uklUrl.append("/link_yosoy-luz.ukl");
     u.setFile(uklUrl, uklData);
 #endif
 
 #ifdef Q_OS_WIN
-    u.createLink(u.getPath(1)+"/unik.exe", "-git=https://github.com/nextsigner/yosoy.git -folder="+pws+"/yosoy -nl",  u.getPath(6)+"/yosoy.lnk", "Ejecutar Unik con el Modulo yosoy", "C:/");
+    u.createLink(u.getPath(1)+"/unik.exe", "-git=https://github.com/nextsigner/yosoy-luz.git -folder="+pws+"/yosoy-luz -nl",  u.getPath(6)+"/yosoy-luz.lnk", "Ejecutar Unik con el Modulo yosoy-luz", "C:/");
 #endif
     //u.createLink("unik", "/home/nextsigner/Escritorio/eee4.desktop",  "rrr777", "Pequeña 222vo", "/home/nextsigner/Imàgenes/ladaga.jpg");
 
@@ -1520,7 +1520,7 @@ int main(int argc, char *argv[])
     //u.initWebSocketServer("127.0.0.1", 12345, "chatserver");
 
     //Set Unik Start Setting
-    //u.setUnikStartSettings("-git=https://github.com/nextsigner/yosoy.git, -nl");
+    //u.setUnikStartSettings("-git=https://github.com/nextsigner/yosoy-luz.git, -nl");
 
 
 #ifdef UNIK_COMPILE_RPI
