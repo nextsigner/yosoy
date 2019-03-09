@@ -53,7 +53,7 @@ ApplicationWindow {
         }
         Image {
             anchors.fill: parent
-            source: "qrc:/resources/logo_unik_500x500.png"
+            source: "qrc:/resources/logo_yosoy_500x500.png"
         }
         Text{
             text: "by <b>unikode.org</b>"
@@ -65,10 +65,13 @@ ApplicationWindow {
             anchors.topMargin: appSplash.width*0.005
         }
     }
-    Item{
+    Rectangle{
         id:xLogTxt
         width: appSplash.fs*20
         height: logtxt.contentHeight+appSplash.fs*0.2
+        border.width: 2
+        border.color: 'black'
+        radius: app.fs*0.2
         anchors.top: r.bottom
         anchors.topMargin: appSplash.fs
         anchors.horizontalCenter: r.horizontalCenter
@@ -83,49 +86,15 @@ ApplicationWindow {
             }
         }
         Rectangle{
-            width: parent.height
-            height: parent.width
-            rotation: -90
-            anchors.centerIn: parent
-            radius: appSplash.fs*0.2
-            gradient: Gradient {
-                GradientStop {
-                    position: 0.00;
-                    color: "#ff6600";
-                }
-                GradientStop {
-                    position: 1.00;
-                    color: "#ff0000";
-                }
-            }
-        }
-        Rectangle{
-            width: parent.height-appSplash.fs*0.2
-            height: parent.width-appSplash.fs*0.2
-            rotation: 90
-            anchors.centerIn: parent
-            radius: appSplash.fs*0.2
-            gradient: Gradient {
-                GradientStop {
-                    position: 0.00;
-                    color: "#ff6600";
-                }
-                GradientStop {
-                    position: 1.00;
-                    color: "#ff0000";
-                }
-            }
-        }
-        Rectangle{
             id:pb
             height: parent.height*0.1
             width: 0
-            color: 'white'
+            color: 'red'
             anchors.bottom: parent.bottom
         }
         Text{
             id: logtxt
-            color: appSplash.c2
+            color: 'black'
             font.pixelSize: appSplash.fs
             //anchors.verticalCenter: parent.verticalCenter
             width: parent.width-appSplash.fs

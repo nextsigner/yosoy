@@ -6,7 +6,7 @@ ApplicationWindow{
     objectName: 'awsplash'
     visible: true
     visibility: "FullScreen"
-    color: "black"
+    color: "white"
     property bool ver: true
     property color c1: "#1fbc05"
     property color c2: "#4fec35"
@@ -15,7 +15,7 @@ ApplicationWindow{
     Connections {target: unik;onUkStdChanged: log.setTxtLog(''+unik.ukStd); }
 
     onClosing: {
-        close.accepted = false
+        //close.accepted = false
     }
 
     Timer{
@@ -33,15 +33,9 @@ ApplicationWindow{
     Rectangle{
         id:r
         width: parent.width
-        height: parent.height
+        height: xTxtLog.height-logo.height
         color: "transparent"
         anchors.centerIn: parent
-        /*onOpacityChanged: {
-            if(opacity===0.0){
-                //appSplash.visible=false
-                appSplash.close()
-            }
-        }*/
         Behavior on opacity{
             NumberAnimation{
                 duration:500
@@ -54,7 +48,7 @@ ApplicationWindow{
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
             //anchors.centerIn: parent
-            source: "qrc:/resources/logo_unik_500x500.png"
+            source: "qrc:/resources/logo_yosoy_500x500.png"
             opacity: 0.0
             Behavior on opacity {
                 NumberAnimation{
@@ -69,18 +63,20 @@ ApplicationWindow{
             anchors.rightMargin: 10
             anchors.top: parent.top
             anchors.topMargin: 46
+            opacity: logo.opacity
         }
         Rectangle{
+            id:xTxtLog
             opacity: logo.opacity
             width: Screen.desktopAvailableWidth<Screen.desktopAvailableHeight ? Screen.desktopAvailableWidth*0.9 : Screen.desktopAvailableHeight*0.9
             height: log.contentHeight
             anchors.top: logo.bottom
             anchors.topMargin: -4
             anchors.horizontalCenter: r.horizontalCenter
-            color: "#333333"
+            color: "white"
             radius: 6
             border.width: 1
-            border.color: appSplash.c1
+            border.color: 'black'
             clip:true
             Rectangle{
                 id:pb
@@ -91,7 +87,7 @@ ApplicationWindow{
             }
             Text{
                 id: log
-                color: appSplash.c2
+                color: 'black'
                 width: appSplash.width<appSplash.height ? appSplash.width*0.9 : appSplash.height*0.9
                 height: contentHeight
                 wrapMode: Text.WordWrap
